@@ -1,6 +1,6 @@
 """
 Manipulando stirngs
-* String idices
+* String indices
 * Fatiamento de string
 * Funções built-in len, abs, type, print, etc...
 """
