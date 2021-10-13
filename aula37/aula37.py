@@ -20,7 +20,7 @@ print(next(g))
 print(next(g))
 print(next(g))
 
-lista = (x for x in range(10000))
+lista = (x for x in range(10))
 for n in lista:
     print(n)
 
