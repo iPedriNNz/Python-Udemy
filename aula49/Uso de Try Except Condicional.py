@@ -3,14 +3,11 @@ def converte(valor):
         valor = int(valor)
         return valor
     except ValueError:
-
         try:
             valor = float(valor)
             return valor
         except:
             pass
-
-
 while True:
     numero = converte(input('Digite um número: '))
 
