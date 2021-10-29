@@ -1,6 +1,36 @@
+def todo_ls():
+    print('#' * 30)
+    cont = 1
+    for t in tarefas:
+        print(f'Tarefa nº{cont}: {t}')
+        cont += 1
+    cont = 1
+    print('#' * 30)
+
+def todo_rm():
+    rm = input(f'Gostaria realmente de remover a tarefa "{tarefas[-1]}" da sua lista ? [S / N]').upper().strip()
+    if rm == 'S':
+        tarefas.pop()
+        print('Tarefa removida com sucesso! ')
+    elif rm == 'N':
+        print('Operação cancelada!')
+    else:
+        print('Opção inválida, tente novamente !')
+
+def todo_rf():
+    rf = input(f'Gostaria realmente de refazer a tarefa "{ultima}" para sua lista ? [S / N]').upper().strip()
+    if rf == 'S':
+        tarefas.append(ultima)
+        print('Tarefa refeita com sucesso! ')
+    elif rf == 'N':
+        print('Operação cancelada!')
+    else:
+        print('Opção inválida, tente novamente !')
+
+
+
 tarefas = []
 ultima = ''
-copia_tarefas = []
 
 while True:
     op = str(input('Escolha uma das opções:\n'
@@ -25,36 +55,14 @@ while True:
         tarefas.append(nome_tarefa)
 
     elif op == 2:
-        print('#' * 30)
-        cont = 1
-        for t in tarefas:
-            print(f'Tarefa nº{cont}: {t}')
-            cont += 1
-        cont = 1
-        print('#' * 30)
+        todo_ls()
 
     elif op == 3:
-        rm = input(f'Gostaria realmente de remover a tarefa "{tarefas[-1]}" da sua lista ? [S / N]').upper().strip()
-        if rm == 'S':
-            tarefas.pop()
-            print('Tarefa removida com sucesso! ')
-        elif rm == 'N':
-            print('Operação cancelada!')
-            continue
-        else:
-            print('Opção inválida, tente novamente !')
+        todo_rm()
 
     elif op == 4:
-        rf = input(f'Gostaria realmente de refazer a tarefa "{ultima}" para sua lista ? [S / N]').upper().strip()
-        if rf == 'S':
-            tarefas.append(ultima)
-            print('Tarefa refeita com sucesso! ')
-        elif rf == 'N':
-            print('Operação cancelada!')
-        else:
-            print('Opção inválida, tente novamente !')
+        todo_rf()
 
     elif op == 5:
         print('Fechando o programa...')
         break
-
