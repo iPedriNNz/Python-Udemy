@@ -1,10 +1,15 @@
+if __name__ == '__main__':
+    tarefas = []
+    ultima = ''
+
+
 def todo_ls():
     print('#' * 30)
-    cont = 1
+    count = 1
     for t in tarefas:
-        print(f'Tarefa nº{cont}: {t}')
-        cont += 1
-    cont = 1
+        print(f'Tarefa nº{count}: {t}')
+        count += 1
+    count = 1
     print('#' * 30)
 
 def todo_rm():
@@ -29,40 +34,37 @@ def todo_rf():
 
 
 
-tarefas = []
-ultima = ''
-
 while True:
-    op = str(input('Escolha uma das opções:\n'
-'[1] Adicionar tarefa\n'
-'[2] Listar tarefas\n'
-'[3] Desfazer\n'
-'[4] Refazer\n'
-'[5] Sair\n'
-'Sua escolha: '))
+    todo = str(input('Escolha uma das opções:\n'
+        '[1] Adicionar tarefa\n'
+        '[2] Listar tarefas\n'
+        '[3] Desfazer\n'
+        '[4] Refazer\n'
+        '[5] Sair\n'
+        'Sua escolha: '))
 
-    if op.isnumeric():
-        op = int(op)
-        if op not in range(1, 6):
+    if todo.isnumeric():
+        todo = int(todo)
+        if todo not in range(1, 6):
             print('Escolha entre as opções 1 e 4.')
     else:
         print('Você deve digitar apenas números.')
         continue
 
-    if op == 1:
+    if todo == 1:
         nome_tarefa = input('Digite o nome da tarefa a ser adicionada: ')
         ultima = nome_tarefa
         tarefas.append(nome_tarefa)
 
-    elif op == 2:
+    elif todo == 2:
         todo_ls()
 
-    elif op == 3:
+    elif todo == 3:
         todo_rm()
 
-    elif op == 4:
+    elif todo == 4:
         todo_rf()
 
-    elif op == 5:
+    elif todo == 5:
         print('Fechando o programa...')
         break
