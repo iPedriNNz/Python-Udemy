@@ -32,5 +32,3 @@ bd = BaseDeDados()
 bd.inserir_cliente(1, 'Pedro')
 bd.inserir_cliente(2, 'Luiz')
 bd.inserir_cliente(3, 'Otavio')
-
-
